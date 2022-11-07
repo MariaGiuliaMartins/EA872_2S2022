@@ -1,0 +1,182 @@
+EA878 ----- TESTES REALIZADOS ----- LAB07
+
+matheus@matheus-desktop:~/Desktop/ea878/Lab07$ ./server
+
+./server accepting connections from HTTP clients.
+GET / HTTP/1.1
+Host: localhost:5665
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.2.3) Gecko/20100423 Ubuntu/10.04 (lucid) Firefox/3.6.3
+Accept: text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8
+Accept-Language: en-us, en;q=0.5
+Accept-Encoding: gzip, deflate
+Accept-Charset: ISO-8859-1, utf-8;q=0.7, *;q=0.7
+Keep-Alive: 115
+Connection: keep-alive
+If-Modified-Since: Mon, 11 Oct 2010 19:55:03 GMT
+Cache-Control: max-age=0
+HTTP/1.1 200 OK
+Date: Tue, 12 Oct 2010 22:34:29 GMT
+Server: MYSERVER/5.0
+Last-Modified: Tue, 12 Oct 2010 22:34:15 GMT
+Content-Length: 244
+Content-Type: text/plain
+
+
+CONTEUDO ENVIADO
+Conteudo de /home/matheus/Desktop/ea878/Lab07/:
+.
+..
+.goutputstream-KMB3JV
+Makefile
+ctype.cpp
+dump
+fileman
+fileman.c
+http-dump.c
+http-dump.c~
+http_parser.c
+http_parser.h
+public_html
+resp.cpp
+server
+server.cpp
+server.cpp~
+server.hpp
+server.hpp~
+
+Request ended.
+
+
+GET /Makefile HTTP/1.1
+Host: localhost:5665
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.2.3) Gecko/20100423 Ubuntu/10.04 (lucid) Firefox/3.6.3
+Accept: text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8
+Accept-Language: en-us, en;q=0.5
+Accept-Encoding: gzip, deflate
+Accept-Charset: ISO-8859-1, utf-8;q=0.7, *;q=0.7
+Keep-Alive: 115
+Connection: keep-alive
+If-Modified-Since: Mon, 11 Oct 2010 19:55:03 GMT
+HTTP/1.1 200 OK
+Date: Tue, 12 Oct 2010 22:35:23 GMT
+Server: MYSERVER/5.0
+Last-Modified: Wed, 06 Oct 2010 15:26:32 GMT
+Content-Length: 340
+Content-Type: text/plain
+
+
+CONTEUDO ENVIADO
+CC=g++
+CFLAGS=-ggdb
+EXEC=server
+OBJ=resp.o ctype.o httop_parser.o server.o
+all: $(EXEC)
+
+lab03b: resp.o ctype.o httop_parser.o server.o
+	$(CC) $(CFLAGS) -g server.cpp -o lab03b
+
+%.o: %.cpp server.hpp http_parser.h
+	$(CC) -o $@ -c $< $(CFLAGS)
+server.o: server.cpp server.hpp
+	$(CC) -o $@ -c $< $(CFLAGS)
+
+clean:
+	rm -rf *.o
+
+Request ended.
+
+
+GET /xyz HTTP/1.1
+Host: localhost:5665
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.2.3) Gecko/20100423 Ubuntu/10.04 (lucid) Firefox/3.6.3
+Accept: text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8
+Accept-Language: en-us, en;q=0.5
+Accept-Encoding: gzip, deflate
+Accept-Charset: ISO-8859-1, utf-8;q=0.7, *;q=0.7
+Keep-Alive: 115
+Connection: keep-alive
+HTTP/1.1 404 Not Found
+Date: Tue, 12 Oct 2010 22:35:45 GMT
+Server: MYSERVER/5.0
+Content-Length: 178
+Content-Type: text/html
+
+
+CONTEUDO ENVIADO
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>404 Not Found</h1>
+<p>Um erro ocorreu.</p>
+</body></html>
+
+
+Request ended.
+
+
+GET /Teste HTTP/1.1
+Host: localhost:5665
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.2.3) Gecko/20100423 Ubuntu/10.04 (lucid) Firefox/3.6.3
+Accept: text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8
+Accept-Language: en-us, en;q=0.5
+Accept-Encoding: gzip, deflate
+Accept-Charset: ISO-8859-1, utf-8;q=0.7, *;q=0.7
+Keep-Alive: 115
+Connection: keep-alive
+If-Modified-Since: Tue, 12 Oct 2010 22:43:34 GMT
+HTTP/1.1 200 OK
+Date: Tue, 12 Oct 2010 22:49:45 GMT
+Server: MYSERVER/5.0
+Last-Modified: Tue, 12 Oct 2010 22:43:34 GMT
+Content-Length: 183
+Content-Type: text/html
+
+
+CONTEUDO ENVIADO
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>Index</title>
+</head><body>
+<h1>Arquivo Index.htm</h1>
+<p>O programa o abriu corretamente.</p>
+</body></html>
+
+
+
+Request ended.
+
+
+GET /Teste/ HTTP/1.1
+Host: localhost:5665
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.2.3) Gecko/20100423 Ubuntu/10.04 (lucid) Firefox/3.6.3
+Accept: text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8
+Accept-Language: en-us, en;q=0.5
+Accept-Encoding: gzip, deflate
+Accept-Charset: ISO-8859-1, utf-8;q=0.7, *;q=0.7
+Keep-Alive: 115
+Connection: keep-alive
+If-Modified-Since: Tue, 12 Oct 2010 22:43:34 GMT
+HTTP/1.1 200 OK
+Date: Tue, 12 Oct 2010 22:50:07 GMT
+Server: MYSERVER/5.0
+Last-Modified: Tue, 12 Oct 2010 22:43:34 GMT
+Content-Length: 183
+Content-Type: text/html
+
+
+CONTEUDO ENVIADO
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>Index</title>
+</head><body>
+<h1>Arquivo Index.htm</h1>
+<p>O programa o abriu corretamente.</p>
+</body></html>
+
+
+
+Request ended.
+
+
+
